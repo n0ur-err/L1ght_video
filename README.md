@@ -1,106 +1,114 @@
 # L1ght Video Downloader
 
-<div align="center">
-  
-![Banner](img/img.jpg)
+A professional, cross-platform YouTube video downloader featuring a modern desktop UI and robust Python backend.
 
-**A stylish terminal-based YouTube downloader for highest quality videos**
+---
 
-[![Python](https://img.shields.io/badge/Python-3.7%2B-blue)](https://www.python.org/)
-[![FFmpeg](https://img.shields.io/badge/FFmpeg-7.1.1-red)](https://ffmpeg.org/)
-[![yt-dlp](https://img.shields.io/badge/yt--dlp-latest-brightgreen)](https://github.com/yt-dlp/yt-dlp)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+## Overview
+L1ght Video Downloader is a next-generation application for downloading YouTube videos and audio in the highest available quality. It combines a beautiful, glassmorphism-inspired desktop interface with a powerful Python backend, providing both ease of use and advanced features for all users.
 
-</div>
+---
 
-## 📋 Description
+## Features
+- **Modern Desktop UI:** Built with React, Tailwind CSS, and Tauri for a native feel and lightning-fast performance.
+- **Multiple Quality Options:** Download in 4K, HD, SD, or audio-only (MP3).
+- **Animated & Responsive Design:** Smooth transitions, live stats, and a glassmorphism look.
+- **Download History & Library:** Track, manage, and access all your downloads.
+- **Custom Save Location:** Choose where your files are stored.
+- **Live Progress & Stats:** Real-time speed, ETA, and progress indicators.
+- **Cross-Platform:** Works on Windows, macOS, and Linux.
+- **Terminal & GUI:** Use as a command-line tool or a full-featured desktop app.
 
-L1ght Video is a sleek, terminal-based YouTube video downloader that combines style with functionality. It downloads videos from YouTube in the highest available quality, with a visually appealing interface featuring animated progress bars and elegant ASCII art.
+---
 
-The tool downloads the best video and audio streams separately, then merges them to ensure maximum quality, all while providing a seamless user experience with real-time progress indicators.
+## Tech Stack
+- **Frontend:** React 18, TypeScript, Vite, Tailwind CSS, Framer Motion, Lucide React
+- **Desktop Shell:** Tauri (Rust)
+- **Backend:** Python 3.7+, yt-dlp, FFmpeg
 
-## ✨ Features
+---
 
-- 🎬 **Maximum Quality**: Downloads best available video and audio streams
-- 🔄 **Automatic Merging**: Combines separate streams for optimal quality
-- 📊 **Animated Progress Bars**: Visual real-time download progress
-- 💾 **Convenient Storage**: Saves to user's Videos folder automatically
-- 🖥️ **Terminal UI**: Stylish ASCII art interface
-- 🛑 **Error Handling**: Robust error management with informative messages
-- 🔌 **Simple Interface**: Just paste a YouTube URL and go
+## Installation
 
-## 🛠️ Requirements
+### Prerequisites
+- **Node.js** (v18 or higher): [Download Node.js](https://nodejs.org/)
+- **Rust** (latest stable): [Install Rust](https://rustup.rs/)
+- **Python 3.7+**: [Download Python](https://www.python.org/downloads/)
+- **FFmpeg**: [Download FFmpeg](https://ffmpeg.org/download.html) (if not bundled)
 
-- Python 3.7 or higher
-- FFmpeg (bundled with the project)
-- Internet connection
-
-## 📥 Installation
-
-1. Clone the repository:
+### 1. Clone the Repository
 ```bash
-git clone https://github.com/nour23019870/l1ght-video-downloader.git
-cd l1ght-video-downloader
+git clone https://github.com/n0ur-err/L1ght_video.git
+cd L1ght_video
 ```
 
-2. Install dependencies:
+### 2. Install Python Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-*Note: This project includes FFmpeg binaries, so no separate FFmpeg installation is required.*
-
-## 📝 Usage
-
-1. Run the script:
+### 3. Install UI Dependencies
 ```bash
-python main.py
+cd ui
+npm install
 ```
 
-2. When prompted, paste the YouTube URL of the video you want to download.
+### 4. Build & Run the Desktop App
+- **Development mode (hot reload):**
+  ```bash
+  npm run tauri:dev
+  ```
+- **Production build:**
+  ```bash
+  npm run tauri:build
+  ```
+  The installer will be in `ui/src-tauri/target/release/bundle/`
 
-3. Wait for the download and merging process to complete.
+---
 
-4. Find your downloaded video in your system's Videos folder.
+## Usage
 
-## 🔧 How It Works
+### Desktop App
+- Launch the app using the installer or `npm run tauri:dev` for development.
+- Paste a YouTube URL, select quality, and start downloading.
+- Access your download history and manage files from the UI.
 
-1. **Initialization**: The program starts with a stylish ASCII banner
-2. **Input**: User provides a YouTube video URL
-3. **Audio Download**: Downloads the highest quality audio stream
-4. **Video Download**: Downloads the highest quality video stream
-5. **Merging**: Combines the audio and video streams using FFmpeg
-6. **Cleanup**: Removes temporary files
-7. **Completion**: Notifies the user when the download is complete
+### Terminal (Optional)
+- Run the backend directly:
+  ```bash
+  python main.py
+  ```
+- Follow the prompts to download videos via the command line.
 
-## 📋 Dependencies
+---
 
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp): Advanced fork of youtube-dl for downloading YouTube videos
-- [FFmpeg](https://ffmpeg.org/): Complete, cross-platform solution for video processing
-
-## 📋 Project Structure
-
+## Project Structure
 ```
-light-video-downloader/
-├── main.py              # Main script
-├── ffmpeg.exe           # FFmpeg binary
-├── ffplay.exe           # FFplay binary
-├── ffprobe.exe          # FFprobe binary
-└── ffmpeg-7.1.1/        # FFmpeg documentation and additional files
+L1ght_video/
+├── main.py              # Python backend script
+├── requirements.txt     # Python dependencies
+├── ui/                  # Modern desktop UI (Tauri + React)
+│   ├── src/             # React source code
+│   ├── src-tauri/       # Rust backend for Tauri
+│   └── ...
+├── img/                 # Images and banners
+└── ...
 ```
 
-## ⚖️ License
+---
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## License
+This project is licensed under the MIT License.
 
-## 🙏 Credits
+---
 
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) team for their excellent YouTube download library
-- [FFmpeg](https://ffmpeg.org/) for video processing capabilities
-- ASCII art generated for the L1ght Video banner
+## Acknowledgements
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) for advanced YouTube downloading
+- [FFmpeg](https://ffmpeg.org/) for media processing
+- [Tauri](https://tauri.app/), [React](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/), and all open-source contributors
 
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by L1ght for efficient video downloading</sub>
+  <sub>Created and maintained by L1ght — Fast, beautiful, and reliable video downloading for everyone.</sub>
 </div>
