@@ -1,0 +1,21 @@
+[package]
+name = "light-video-downloader"
+version = "1.0.0"
+description = "A modern YouTube video downloader"
+authors = ["you"]
+license = ""
+repository = ""
+default-run = "light-video-downloader"
+edition = "2021"
+rust-version = "1.60"
+
+[build-dependencies]
+tauri-build = { version = "1.5.0", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.5.4", features = [ "window-show", "window-unminimize", "window-minimize", "window-unmaximize", "window-set-title", "window-start-dragging", "window-close", "window-maximize", "window-set-resizable", "window-hide", "fs-create-dir", "dialog-save", "shell-open", "fs-read-dir", "fs-remove-file", "fs-remove-dir", "fs-read-file", "fs-copy-file", "fs-rename-file", "fs-write-file", "fs-exists", "dialog-open", "shell-execute", "path-all", "process-exit", "process-relaunch"] }
+
+[features]
+custom-protocol = [ "tauri/custom-protocol" ]
