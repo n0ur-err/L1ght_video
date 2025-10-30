@@ -1,5 +1,9 @@
 # L1ght Video Downloader
 
+<p align="center">
+  <img src="img/img.jpg" alt="L1ght Video Downloader Banner" width="600"/>
+</p>
+
 A professional, cross-platform YouTube video downloader featuring a modern desktop UI and robust Python backend.
 
 ---
@@ -92,6 +96,7 @@ L1ght_video/
 │   ├── src-tauri/       # Rust backend for Tauri
 │   └── ...
 ├── img/                 # Images and banners
+│   └── img.jpg          # Project banner
 └── ...
 ```
 
